@@ -1289,7 +1289,7 @@ elif [[ -s "${PROJECT_DIR}"/.gitlab_token ]]; then
 		sleep 1
 		git lfs install
 		find . -type f -size +100M -exec git lfs track {} \;
-		[ -e ".gitattributes" ] {
+		[ -e ".gitattributes" ] && {
 			git add ".gitattributes"
 			git commit -sm "Setup Git LFS"
 			git push -u origin "${branch}"
