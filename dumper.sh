@@ -1151,7 +1151,7 @@ if [[ -s "${PROJECT_DIR}"/.github_token ]]; then
 	git remote add origin https://${GITHUB_TOKEN}@github.com/${GIT_ORG}/${repo}.git "${branch}"
 	git lfs install
 	find . -type f -size +100M -exec git lfs track {} \;
-	[ -e ".gitattributes" ] {
+	[ -e ".gitattributes" ] && {
 		git add ".gitattributes"
 		git commit -sm "Setup Git LFS"
 		git push -u origin "${branch}"
